@@ -19,3 +19,11 @@
     3. mount that router on main/app.
     on specific router, the index always start at /.
     when the exported router is mounted on the app/main, the index point is defined there.
+
+# EXPRESS GUIDE => ROUTING
+    1. all to handle all the methods can be use as wildcard?
+    2. end() to describe the end of sending data as response.
+    3. string patterns and regex patterns
+    4. Usage of route parameters.
+    5. handler chaining. the important part is not to send response and calling the next.
+    6. short way of defining handlers for different http method on same routes.
