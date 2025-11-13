@@ -1,0 +1,21 @@
+# DAY 24 EXPRESS & REST API
+
+###  Topics
+
+1. REST API
+2. HTTP METHODS
+3. HTTP Response Types
+4. HTTP STATUS Codes
+5. Postman usages
+
+#### WHY REST API
+    Representationl state transfer.
+    Decouple the data form the html.
+
+#### Express
+    Routes
+    1. create router by using express.Router.
+    2. add handlers for the routes and methods.
+    3. mount that router on main/app.
+    on specific router, the index always start at /.
+    when the exported router is mounted on the app/main, the index point is defined there.
