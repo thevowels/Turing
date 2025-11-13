@@ -7,12 +7,13 @@ router.all('/', function(req, res, next) {
     // calling next here is important as if we don't call it the handling would end here.
     // and one more thing is that if we do res.send or res.json to send back the data,
     // there would be problem like you already sent a data.
+    req
     next();
 });
 
 router.get('/', function(req, res, next) {
     res.status(200)
-        .send('Hello')
+        .send(req.time)
         .end();
     // sendStatus http status
     // send json ... send dat.

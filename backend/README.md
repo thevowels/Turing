@@ -27,3 +27,22 @@
     4. Usage of route parameters.
     5. handler chaining. the important part is not to send response and calling the next.
     6. short way of defining handlers for different http method on same routes.
+
+# DAY 25
+
+## Middlewares
+
+Middlewares can
+1. read the request.
+2. can modify the request which effect for next handlers
+3. Can change the control flow like authentication or redirects.
+
+
+### Different levels of middlewares. 
+
+All have the same principles.
+Those are functions which accept req, res, and next.
+read the request. 
+act accordingly.
+either return directly or call next() to pass to next handlers.
+
