@@ -3,7 +3,11 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-let customLogger = require('./middlewares/loggerMiddleware');
+// let customLogger = require('./middlewares/loggerMiddleware');
+
+const mongoose = require('mongoose');
+const { db } = require('./config/database');
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var todosRouter = require('./routes/todos');
@@ -11,21 +15,22 @@ var testRouter = require('./routes/test');
 
 var app = express();
 
+
+mongoose.connect(db).then( () => console.log('MongoDB Connected'))
+    .catch((err) => console.log(err));
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 app.use(logger('dev'));
-app.use(customLogger('custom'));
+// app.use(customLogger('custom'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use((req,res,next) => {
-    console.log('Custom middleware', req.url);
-    next();
-})
 
 
 app.use('/', indexRouter);

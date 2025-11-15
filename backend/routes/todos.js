@@ -8,8 +8,12 @@ router.get('/', todoController.getAllTodos);
 router.get('/:id', todoController.getTodoById);
 
 router.post('/',todoController.saveTodo);
+// router.post('/', (req,res, next) => {
+//     res.send(req.body);
+//     console.log(req.body);
+// });
 
-router.put('/', todoController.updateTodo);
+router.put('/:id', todoController.updateTodo);
 
 router.delete('/:id',todoController.deleteTodo);
 

@@ -1,30 +1,42 @@
-var todos = require('../dummy/data');
-
-
-
+const Todo = require('../models/Todo')
 async  function getAllTodos(){
-    return todos;
+    return Todo.find();
 }
 async function getTodoById(id){
-    return todos[id-1];
+    return Todo.findById(id);
+
 }
 
 async function saveTodo(todo)
 {
-    console.log('saving todo',todo);
-    return 0;
+    let newTodo = new Todo({
+        ...todo
+    });
+    return newTodo.save();
 }
 
-async function updateTodo(todo)
+async function updateTodo(id,todo)
 {
-    console.log('updating todo', todo);
-    return 0;
+    let oldTodo = await Todo.findById(id);
+    if(oldTodo){
+        return Todo.findByIdAndUpdate(id, todo, {new: true});
+    }
+    else
+    {
+        throw new Error( 'Todo ' + id + ' does not exist' );
+    }
 }
 
 async function deleteTodo(id)
 {
-    console.log('deleting todo of id : ', id);
-    return 0;
+    let oldTodo = await Todo.findById(id);
+    if(oldTodo){
+        return Todo.findByIdAndDelete(id);
+    }
+    else
+    {
+        throw new Error('Todo with id : ' + id + ' does not exist');
+    }
 }
 
 module.exports = {
