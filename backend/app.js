@@ -13,6 +13,7 @@ var usersRouter = require('./routes/users');
 var todosRouter = require('./routes/todos');
 var testRouter = require('./routes/test');
 var moviesRouter = require('./routes/movies');
+var reviewsRouter = require('./routes/reviews');
 var app = express();
 
 
@@ -34,10 +35,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/api/users', usersRouter);
 app.use('/api/todos', todosRouter);
 app.use('/test', testRouter);
 app.use('/api/movies', moviesRouter);
+app.use('/api/reviews', reviewsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
