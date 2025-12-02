@@ -14,6 +14,7 @@ var todosRouter = require('./routes/todos');
 var testRouter = require('./routes/test');
 var moviesRouter = require('./routes/movies');
 var reviewsRouter = require('./routes/reviews');
+const {verifyUserToken} = require("./middlewares/authMiddleware");
 var app = express();
 
 
@@ -27,6 +28,7 @@ app.set('view engine', 'jade');
 
 app.use(logger('dev'));
 // app.use(customLogger('custom'));
+app.use(verifyUserToken);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
