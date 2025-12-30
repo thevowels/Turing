@@ -10,6 +10,7 @@ import FilterableProductTable from "@/app/components/product/FilterableProductTa
 import RefDemo from "@/app/components/ref/RefDemo";
 import Stopwatch from "@/app/components/ref/Stopwatch";
 import FocusInput from "@/app/components/ref/FocusInput";
+import WhyEffect from "@/app/components/effect/WhyEffect";
 
 export default function Home() {
   return (
@@ -23,8 +24,8 @@ export default function Home() {
         {/*  <FilterableProductTable/>*/}
         {/*<RefDemo/>*/}
         {/*  <Stopwatch/>*/}
-          <FocusInput/>
-
+        {/*  <FocusInput/>*/}
+          <WhyEffect/>
 
 
       </main>
