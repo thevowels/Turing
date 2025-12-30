@@ -6,6 +6,10 @@ import CounterWithReducer from "@/app/components/reducer/CounterWithReducer";
 import TodoListWithReducer from "@/app/components/reducer/TodoListWithReducer";
 import ContextDemo from "@/app/components/context/ContextDemo";
 import TodoReducerWithContext from "@/app/components/context/TodoReducerWithContext";
+import FilterableProductTable from "@/app/components/product/FilterableProductTable";
+import RefDemo from "@/app/components/ref/RefDemo";
+import Stopwatch from "@/app/components/ref/Stopwatch";
+import FocusInput from "@/app/components/ref/FocusInput";
 
 export default function Home() {
   return (
@@ -15,7 +19,14 @@ export default function Home() {
         {/*  <CounterWithReducer/>*/}
         {/*  <TodoListWithReducer/>*/}
         {/*  <ContextDemo/>*/}
-          <TodoReducerWithContext/>
+        {/*  <TodoReducerWithContext/>*/}
+        {/*  <FilterableProductTable/>*/}
+        {/*<RefDemo/>*/}
+        {/*  <Stopwatch/>*/}
+          <FocusInput/>
+
+
+
       </main>
     </div>
   );
