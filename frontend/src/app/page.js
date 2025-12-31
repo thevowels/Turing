@@ -11,7 +11,8 @@ import RefDemo from "@/app/components/ref/RefDemo";
 import Stopwatch from "@/app/components/ref/Stopwatch";
 import FocusInput from "@/app/components/ref/FocusInput";
 import WhyEffect from "@/app/components/effect/WhyEffect";
-
+import FtechTodo from "@/app/components/hooks/FetchTodo";
+import FetchUsers from "./components/hooks/FetchUers";
 export default function Home() {
   return (
     <div >
@@ -25,9 +26,9 @@ export default function Home() {
         {/*<RefDemo/>*/}
         {/*  <Stopwatch/>*/}
         {/*  <FocusInput/>*/}
-          <WhyEffect/>
-
-
+        {/* <WhyEffect/> */}
+        <FtechTodo/>
+        {/* <FetchUsers/> */}
       </main>
     </div>
   );
