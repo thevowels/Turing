@@ -4,7 +4,9 @@ import {useGetAllTodosQuery} from "@/lib/features/todoApi/TodoApiSlice";
 import {useEffect} from "react";
 
 export default function TodoPage() {
-    const {data:todos, isError, isLoading, isSuccess} = useGetAllTodosQuery(undefined);
+    const {data:todos, isError, isLoading, isSuccess} = useGetAllTodosQuery(undefined,{
+        pollingInterval: 3000,
+    });
 
     useEffect(() => {
         console.log(todos);
