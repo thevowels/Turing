@@ -2,6 +2,8 @@
 
 import {useGetAllTodosQuery} from "@/lib/features/todoApi/TodoApiSlice";
 import {useEffect} from "react";
+import TodoList from "@/app/todos/TodoList";
+import AddTodo from "@/app/todos/AddTodo";
 
 export default function TodoPage() {
     const {data:todos, isError, isLoading, isSuccess} = useGetAllTodosQuery(undefined,{
@@ -27,7 +29,8 @@ export default function TodoPage() {
     if (isSuccess){
         return (
             <div>
-                {todos.data.map((todo) => <div key={todo._id}>{todo.title}</div>)}
+                <AddTodo/>
+                <TodoList todos={todos.data}/>
             </div>
         )
     }
