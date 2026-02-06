@@ -35,9 +35,10 @@ export const todoSlice = createAppSlice({
     }),
     selectors: {
         selectTodos: (state) => state.todos,
+        selectTodoCount: (state) => state.todos.length,
     }
 });
 
 export const {addTodo, deleteTodo, updateTodo} = todoSlice.actions;
 
-export const {selectTodos} = todoSlice.selectors;
+export const {selectTodos, selectTodoCount} = todoSlice.selectors;
